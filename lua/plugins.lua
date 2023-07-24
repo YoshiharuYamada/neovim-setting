@@ -16,11 +16,18 @@ return require('packer').startup(function(use)
   }
   -- General purpose asynchronous tree viewer written in pure Vim script.
   use 'lambdalisue/fern.vim'
+  -- A highly extendable fuzzy finder over lists. 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.2',
     requires = { 'nvim-lua/plenary.nvim' }
   }
+  -- A dark and light Neovim theme written in Lua ported from the Visual Studio Code TokyoNight theme. 
   use {
     'folke/tokyonight.nvim', lazy = false, priority = 1000, opts = {}
   }
+  -- A neovim plugin to persist and toggle multiple terminals during an editing session
+  use {
+    "akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup()
+  end}
 end)
