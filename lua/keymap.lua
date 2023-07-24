@@ -6,6 +6,8 @@ vim.api.nvim_set_keymap('n', '<leader>tn', ':tabnew<Return>', opts)
 vim.api.nvim_set_keymap('n', '<leader>tr', ':gt', opts)
 -- move tab left
 vim.api.nvim_set_keymap('n', '<leader>tl', ':gT', opts)
+-- Terminal job to normal
+-- vim.api.nvim_set_keymap('t', '<leader>tn', '<C-\\><C-n>', opts)
 
 -- Fern Key Map
 -- open Fern

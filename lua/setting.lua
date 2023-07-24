@@ -10,12 +10,9 @@ vim.opt.fileencoding = "utf-8"
 vim.opt.swapfile = false
 -- レジスタとクリップボードを共有
 vim.opt.clipboard:append({ "unnamedplus" })
--- 24 ビットカラーを使用
-vim.opt.termguicolors = true
 -- 対応する括弧をハイライト表示
 vim.opt.showmatch = true
 -- ダークカラーを使用する
-vim.opt.background = "dark"
 vim.cmd[[colorscheme tokyonight]]
 
 -- guifontを設定しないと文字化けになる。terminalで行ったフォントの設定と同様
@@ -30,3 +27,15 @@ if vim.fn.exists('g:loaded_webdevicons') == 1 then
   vim.fn.call('webdevicons#refresh')
 end
 
+-- ターミナルを開いたらに常にinsertモードに入る
+vim.cmd[[autocmd TermOpen * :startinsert]]
+-- ターミナルモードの場合は左のナンバーを消す
+vim.api.nvim_create_autocmd({ 'TermOpen' }, {
+    pattern = { '*' },
+    callback = function()
+        vim.wo.relativenumber = false
+        vim.wo.number = false
+    end,
+})
+-- :Tで現在のウィンドウの下に開く
+vim.api.nvim_command("command! -nargs=* T split | wincmd j | resize 20 | terminal <args>")
