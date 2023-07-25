@@ -30,4 +30,7 @@ return require('packer').startup(function(use)
     "akinsho/toggleterm.nvim", tag = '*', config = function()
     require("toggleterm").setup()
   end}
+  -- A Fast & Minimalism Style Code Completion Plugin for vim/nvim.
+  use { 'jayli/vim-easycomplete' }
+  use { 'SirVer/ultisnips' }
 end)

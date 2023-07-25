@@ -39,3 +39,6 @@ vim.api.nvim_create_autocmd({ 'TermOpen' }, {
 })
 -- :Tで現在のウィンドウの下に開く
 vim.api.nvim_command("command! -nargs=* T split | wincmd j | resize 20 | terminal <args>")
+
+-- vim-easycompleteの設定
+vim.g["ruby_host_prog"] = os.getenv("NVIM_RUBY_PATH")
