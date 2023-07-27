@@ -17,3 +17,5 @@
   - plenary.nvim
 * tokyonight.nvim
 * toggleterm.nvim
+* vim-easycomplete
+* ultisnips
